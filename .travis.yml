@@ -1,2 +1,9 @@
 language: chsarp
-solution: CiCdTestApp.sh
+script:
+  - xbuild /p:Configuration=Debug CiCdTestApp.sln
+before_install:
+  - sudo apt-get install nunit-console
+before_script:
+  - nuget restore CiCdTestApp.sln
+after_script:
+  - nunit-console CiCdTestApp.Tests/bin/Debug/CiCdTestApp.Tests.dll
