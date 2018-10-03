@@ -1,0 +1,4 @@
+language: chsarp
+solution: CiCdTestApp.sh
+script:
+  - echo "we're here..."
